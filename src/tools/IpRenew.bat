@@ -1,0 +1,2 @@
+ipconfig /renew
+exit

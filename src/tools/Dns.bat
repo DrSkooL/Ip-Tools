@@ -1,0 +1,2 @@
+Ipconfig /flushdns
+exit
