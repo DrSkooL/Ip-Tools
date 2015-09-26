@@ -1,2 +1,3 @@
 Ipconfig /flushdns
+
 exit
