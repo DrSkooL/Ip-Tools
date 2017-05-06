@@ -43,13 +43,17 @@ public class KitMain extends javax.swing.JFrame {
         IpFullSetText = new javax.swing.JLabel();
         PingButton = new javax.swing.JButton();
         TestServerConLabel = new javax.swing.JLabel();
+        Tz_site = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("IpTools v2");
-        setBackground(java.awt.Color.darkGray);
-        setFont(new java.awt.Font("Aharoni", 0, 12)); // NOI18N
+        setTitle("IpTools");
+        setBackground(new java.awt.Color(102, 102, 102));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFont(new java.awt.Font("Dry Brush", 1, 12)); // NOI18N
+        setForeground(new java.awt.Color(102, 102, 102));
         setIconImages(null);
         setName("IpTFrame1"); // NOI18N
+        setResizable(false);
 
         DnsFixClick.setText("Fix");
         DnsFixClick.addActionListener(new java.awt.event.ActionListener() {
@@ -60,15 +64,15 @@ public class KitMain extends javax.swing.JFrame {
 
         jLabel1.setText("Dns Fix");
 
-        ProgramName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ProgramName.setFont(new java.awt.Font("Dry Brush", 1, 36)); // NOI18N
+        ProgramName.setForeground(new java.awt.Color(0, 0, 0));
         ProgramName.setText("Doc's IpTooLs");
 
-        jLabel2.setText("IpConfig Release");
+        jLabel2.setText("IpConfig");
 
-        jLabel3.setText("IpConfig Renew");
+        jLabel3.setText("IpConfig ");
 
-        TitanzLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Titanz logo Nako.jpg"))); // NOI18N
-        TitanzLogo.setText("jLabel4");
+        TitanzLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Titanz-DryBrush-400x75.png"))); // NOI18N
 
         IpRelease.setText("Release");
         IpRelease.addActionListener(new java.awt.event.ActionListener() {
@@ -100,74 +104,86 @@ public class KitMain extends javax.swing.JFrame {
             }
         });
 
-        TestServerConLabel.setText("Test Server Connection");
+        TestServerConLabel.setText("Test Connection");
+
+        Tz_site.setFont(new java.awt.Font("Dry Brush", 1, 36)); // NOI18N
+        Tz_site.setText("Tz");
+        Tz_site.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tz_siteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(TitanzLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                    .addComponent(TitanzLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ProgramName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Tz_site))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(IpRenew)
-                                    .addComponent(jLabel3)
-                                    .addComponent(DnsFixClick)
                                     .addComponent(IpRelease)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(IpRenew)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TestServerConLabel)
+                                    .addComponent(PingButton))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(jLabel2)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(IpFullSetText, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel1))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(IpFullSetStart)
-                                                .addGap(24, 24, 24))
-                                            .addComponent(IpFullSetText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(16, 16, 16))
-                                    .addComponent(TestServerConLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PingButton, javax.swing.GroupLayout.Alignment.LEADING)))))
-                    .addComponent(ProgramName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(IpFullSetStart)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DnsFixClick)))))
+                        .addGap(24, 24, 24))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(ProgramName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addGap(9, 9, 9)
-                        .addComponent(DnsFixClick)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(TestServerConLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IpRelease)
-                            .addComponent(PingButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(Tz_site, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(IpFullSetText)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(IpFullSetText)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(IpFullSetStart))
-                            .addComponent(IpRenew, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(0, 2, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(TitanzLogo)))
+                                    .addComponent(IpFullSetStart)
+                                    .addComponent(DnsFixClick))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(TestServerConLabel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(PingButton))
+                        .addComponent(IpRenew)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(IpRelease)))
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TitanzLogo)
                 .addContainerGap())
         );
 
@@ -214,18 +230,27 @@ public class KitMain extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_PingButtonActionPerformed
 
+    private void Tz_siteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tz_siteActionPerformed
+        try {
+            Process p = Runtime.getRuntime().exec("cmd /c cd src/Tools && start TzPage.bat");
+        } catch (java.io.IOException ex)  {
+            Logger.getLogger(KitMain.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+    
+    }//GEN-LAST:event_Tz_siteActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Dark Metal look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (Dark Metal) ">
-        /* If Dark Metal (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Windows look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (Windows) ">
+        /* If Windows (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Dark Metal".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                 } else {
                     javax.swing.UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                     break;
@@ -260,6 +285,7 @@ public class KitMain extends javax.swing.JFrame {
     private javax.swing.JLabel ProgramName;
     private javax.swing.JLabel TestServerConLabel;
     private javax.swing.JLabel TitanzLogo;
+    private javax.swing.JButton Tz_site;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
